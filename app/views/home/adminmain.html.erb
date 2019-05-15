@@ -1,0 +1,145 @@
+
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container"><br>
+
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Batch Book</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="adminmain">Batch Book</a></li>
+        <li><a href="batchlist">Books Completed List</a></li>
+        <li><a href="pendingbatch">Pending List</a></li>
+        <li><a href="duebatchbook">Due List</a></li>
+      </ul>
+    </div>
+  </nav>-->
+<div class="container">
+      <div class="navbar navbar-default" style="width: 500px;" float-left>
+        <ul class="nav navbar-nav float-left">
+          <li>  <%= link_to 'Batch Book', home_adminmain_path %></li>
+          <li>  <%= link_to 'Books Completed', home_batchlist_path %></li>
+          <% if session[:user]== 1 || session[:user]== 2 %>
+              <li><%= link_to 'Pending List', home_pendingbatch_path %></li>
+              <li><%= link_to 'Due List', home_duebatchbook_path %></li>
+
+          <%end%>
+        </ul>
+      </div>
+
+
+
+
+
+
+
+
+
+  <div id="myDIV">
+  <%= form_tag adminmain_path do %>
+
+      <% if session[:user]== 1 %>
+
+          <button name ='button' class="btn btn-info" value="addbatch">Add BatchBook</button><br>
+          <%end%>
+
+      <!--<a href="batchlist">list of batchbook students </a><br>
+    <a href="pendingbatch">Pending list of batchbook students </a><br>
+    <a href="duebatchbook">Due batchbook list</a>-->
+      <!--<button name="button" value="logout">Logout</button>-->
+  <%end%>
+
+  <%= form_tag adminmain_path do%>
+      <search> <br><br>Search Students : <input type="text" name="studentid" required>
+        <button name="search" value="search" onclick="myFunction()"> Search</button></search>
+
+  <%end%>
+
+
+  <%= form_tag adminmain_path do%>
+
+      <br>OR<br>
+      <searchbatch> Search by Batches :
+        <select name="batch">
+          <option disabled>select batch</option>
+          <% @batchs.each do |batch| %>
+              <opion><%= batch %></opion>
+              <%= content_tag(:option, batch.batchbookname, value: batch.batchbookname) %>
+
+
+          <%end%>
+
+        </select>
+        <button name="search" value="option" onclick="myFunction()">Search</button></searchbatch>
+
+
+  <%end%>
+  </div>
+  <hr>
+  <center>
+    <%if @name!=nil then %>
+
+        <h3>Details</h3><br><hr>
+
+
+
+        Batchbook: <%= @batchbook %><br>
+        Student ID : <%= @studentid %><br>
+        Name : <%= @name %><br>
+        Field Of Study : <%= @fos%><br>
+        Status : <%if @status == '1' then @status='Completed' else @status='Pending' end%><%= @status%><br>
+        Created At: <%= @dateofentry %><br>
+        End Date : <%= @enddate %><br>
+        <br><hr></center>
+    <%end%>
+
+
+
+    <% if @batch_result!=nil then%>
+        <h3>Details</h3>
+        <label> Batchbook: <%= @batch_option %></label><hr>
+        <table class="table">
+          <thead>
+          <tr>
+            <th>Student ID</th>
+            <th>name </th>
+            <th> Field of Stud</th>
+            <th>Status</th>
+            <th>Created At</th>
+            <th>End Date </th>
+          </tr>
+          </thead>
+          <%@batch_result.each do |studentss|%>
+
+        <tbody>
+          <tr>
+            <td> <%= studentss['studentid'] %></td>
+              <td>  <%= studentss['studentname'] %></td>
+              <td> <%= studentss['fos']%></td>
+            <td><%if studentss['status'] == '1' then @status='Completed' else @status='Pending' end%><%= @status%></td>
+            <td><%= studentss['creationdate'] %></td>
+              <td><%=studentss['expirydate'] %></td>
+          </tr>
+
+        <%end%>
+    <%end%>
+
+
+
+
+
+
+    </div>
+
+

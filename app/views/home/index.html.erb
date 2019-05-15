@@ -1,0 +1,81 @@
+<html>
+<head>
+  <!-- Latest compiled and minified CSS
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ -->
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script src="http://code.gijgo.com/1.6.1/js/gijgo.js" type="text/javascript"></script>
+  <link href="http://code.gijgo.com/1.6.1/css/gijgo.css" rel="stylesheet" type="text/css" />
+
+
+
+</head>
+
+<% if  session[:batchbookname]!=nil && session[:expirydate]!=nil   then %>
+    <body>
+
+    <div class="container">
+      <br>
+
+      <%= link_to 'Batch Book', home_adminmain_path %>
+
+      <%= link_to 'Books Completed', home_batchlist_path %>
+      <% if session[:user]== 1 ||  session[:user]== 2 %>
+          <%= link_to 'Pending List', home_pendingbatch_path %>
+          <%= link_to 'Due List', home_duebatchbook_path %>
+
+      <%end%>
+
+      <br>
+      <br>
+
+      <%= form_tag index_path do %>
+          <center><h2>Batch Book</h2></center>
+          <hr>
+          <div class="row">
+            <div class="cols-sm-1">Student ID :</div>
+            <div class="cols-sm-3"><input type="text" name="studentid" pattern="\d{6}" title="student id must be 6 digit long" required></div>
+          </div>  <br>
+
+          <div class="row">
+            <div class="cols-sm-1">Student Name :</div>
+            <div class="cols-sm-3"><input type="text" name="studentname" required></div>
+          </div>  <br>
+
+
+          <div class="row">
+            <div class="cols-sm-1">FOS :</div>
+            <div class="cols-sm-3"><input type="text" name="fos" required></div>
+          </div>  <br>
+
+
+
+          <button style="margin-left: 25px;" class="btn btn-dangerous" type="button" name="button" value="cancel">Cancel</button>
+          <button  class="btn btn-success" type="submit" name="button" value="insert">Insert</button>
+          <hr>
+      <% end %>
+
+
+      <script type="text/javascript">
+          $('#expirydate').datepicker({
+              uiLibrary: 'bootstrap'
+          });
+      </script>
+    </div>
+    </div>
+
+
+
+    </div>
+
+    </body>
+<%end %>

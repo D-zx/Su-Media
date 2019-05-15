@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Assign Tasks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Deadline</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @assign_tasks.each do |assign_task| %>
+      <tr>
+        <td><%= assign_task.title %></td>
+        <td><%= assign_task.description %></td>
+        <td><%= assign_task.deadline %></td>
+        <td><%= assign_task.user %></td>
+        <td><%= link_to 'Show', assign_task %></td>
+        <td><%= link_to 'Edit', edit_assign_task_path(assign_task) %></td>
+        <td><%= link_to 'Delete', assign_task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Assign Task', new_assign_task_path %>

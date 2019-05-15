@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Allocateddate:</strong>
+  <%= @budget.allocateddate %>
+</p>
+
+<p>
+  <strong>Total:</strong>
+  <%= @budget.total %>
+</p>
+
+<p>
+  <strong>Spent:</strong>
+  <%= @budget.spent %>
+</p>
+
+<p>
+  <strong>Balance:</strong>
+  <%= @budget.balance %>
+</p>
+
+<p>
+  <strong>Note:</strong>
+  <%= @budget.note %>
+</p>
+
+<%= link_to 'Edit', edit_budget_path(@budget) %> |
+<%= link_to 'Back', budgets_path %>

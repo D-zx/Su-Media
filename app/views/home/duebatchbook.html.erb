@@ -1,0 +1,87 @@
+
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container"><br>
+
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Batch Book</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="adminmain">Batch Book</a></li>
+        <li><a href="batchlist">Books Completed List</a></li>
+        <li><a href="pendingbatch">Pending List</a></li>
+        <li><a href="duebatchbook">Due List</a></li>
+      </ul>
+    </div>
+  </nav>-->
+<div class="container">
+  <div class="navbar navbar-default" style="width: 500px;" float-left>
+    <ul class="nav navbar-nav float-left">
+      <li>  <%= link_to 'Batch Book', home_adminmain_path %></li>
+      <li>  <%= link_to 'Books Completed', home_batchlist_path %></li>
+      <% if session[:user]== 1 || session[:user]== 2 %>
+          <li><%= link_to 'Pending List', home_pendingbatch_path %></li>
+          <li><%= link_to 'Due List', home_duebatchbook_path %></li>
+
+      <%end%>
+    </ul>
+  </div>
+  <%=session[:timenow]%>
+
+  <%= form_tag pendingbatch_path do %>
+
+      <br>
+
+      <h2>Pending List</h2>
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th>Batch Name</th>
+          <th>Student ID</th>
+          <th>Student Name</th>
+          <th>Field Of Study</th>
+          <th>End Date</th>
+          <th>Status</th>
+          <% if session[:user]==1 %>
+              <th>Action</th>
+          <%end%>
+
+        </tr>
+        </thead>
+        <tbody>
+
+        <% @result_due.each do |result| %>
+
+            <tr>
+              <td><%=result['batchbookname'] %></td>
+              <td><%=result['studentid'] %></td>
+              <td><%=result['studentname'] %></td>
+              <td><%=result['fos'] %></td>
+              <td><%=result['expirydate'] %></td>
+              <td>Pending</td>
+              <% if session[:user]==1 %>
+                  <td><button class="btn btn-success" name="pending" type="submit" value="<%=result['studentid'] %>">Complete</button></td>
+              <%end%>
+
+
+            </tr>
+
+        <%end%>
+        </tbody>
+      </table>
+      </div>
+  <%end%>
+  </body>
+  </html>
+

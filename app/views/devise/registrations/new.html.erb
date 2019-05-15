@@ -1,0 +1,60 @@
+
+
+<h2>Sign up</h2>
+
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= f.error_notification %>
+
+    <div class="form-inputs">
+      <div class="field">
+        <%= f.label :name %><br />
+        <%= f.text_field :name, autofocus: true %>
+      </div>
+      <div class="field">
+        <%= f.label :studentid %><br />
+        <%= f.text_field :studentid, autofocus: true %>
+      </div>
+
+      <div class="field">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password %>
+        <% if @minimum_password_length %>
+            <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %><br />
+        <%= f.password_field :password, autocomplete: "off" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password_confirmation %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "off" %>
+      </div>
+
+      <div class="field" >
+        <%= f.label :Type %><br />
+        <%= f.select(:role_id, options_for_select([['Volunteers', '2'], ['Students', '3'] ]))%>
+      </div>
+      <div class="field">
+        <%= f.label :Field_of_Study %><br />
+        <%= f.text_field :fos, autofocus: true %>
+      </div>
+      <div class="field" >
+        <%= f.label :Gender %><br />
+        <%= f.select(:gender, options_for_select([['male', 'male'], ['female', 'female'] ]))%>
+      </div>
+      <div class="field">
+        <%= f.label :Contact_number %><br />
+        <%= f.text_field :ph, autofocus: true %>
+      </div>
+
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit, "Sign up" %>
+    </div>
+<% end %>
+
+<%= render "devise/shared/links" %>

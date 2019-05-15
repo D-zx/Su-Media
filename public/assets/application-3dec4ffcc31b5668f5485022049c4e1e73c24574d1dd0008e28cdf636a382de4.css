@@ -1,0 +1,613 @@
+/*! Jcrop.css v2.0.4 - build: 20151117
+ *  Copyright 2008-2015 Tapmodo Interactive LLC
+ *  Free software under MIT License
+ **/
+/*
+  The outer-most container in a typical Jcrop instance
+  If you are having difficulty with formatting related to styles
+  on a parent element, place any fixes here or in a like selector
+
+  You can also style this element if you want to add a border, etc
+  A better method for styling can be seen below with .jcrop-light
+  (Add a class to the holder and style elements for that extended class)
+*/
+/* line 15, /home/kavya/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rails-assets-jcrop-2.0.4/app/assets/stylesheets/jcrop/Jcrop.scss */
+.jcrop-active {
+  direction: ltr;
+  text-align: left;
+  box-sizing: border-box;
+  /* IE10 touch compatibility */
+  -ms-touch-action: none;
+}
+
+/* line 22, /home/kavya/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rails-assets-jcrop-2.0.4/app/assets/stylesheets/jcrop/Jcrop.scss */
+.jcrop-dragging {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* line 28, /home/kavya/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rails-assets-jcrop-2.0.4/app/assets/stylesheets/jcrop/Jcrop.scss */
+.jcrop-selection {
+  z-index: 2;
+}
+
+/* line 31, /home/kavya/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rails-assets-jcrop-2.0.4/app/assets/stylesheets/jcrop/Jcrop.scss */
+.jcrop-selection.jcrop-current {
+  z-index: 4;
+}
+
+/* Selection Borders */
+/* line 35, /home/kavya/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rails-assets-jcrop-2.0.4/app/assets/stylesheets/jcrop/Jcrop.scss */
+.jcrop-border {
+  background: #ffffff url(/assets/jcrop/css/Jcrop-752309673bbd9d9b2ba0bd58d0a7071a2c59c30e2824d85bcd2a3bc0a07ef1f1.gif);
+  line-height: 1px !important;
+  font-size: 0 !important;
+  overflow: hidden;
+  position: absolute;
+  filter: alpha(opacity=50) !important;
+  opacity: 0.5 !important;
+}
+
+/* line 44, /home/kavya/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rails-assets-jcrop-2.0.4/app/assets/stylesheets/jcrop/Jcrop.scss */
+.jcrop-border.ord-w,
+.jcrop-border.ord-e,
+.jcrop-border.ord-n {
+  top: 0px;
+}
+
+/* line 49, /home/kavya/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rails-assets-jcrop-2.0.4/app/assets/stylesheets/jcrop/Jcrop.scss */
+.jcrop-border.ord-n,
+.jcrop-border.ord-s {
+  width: 100%;
+  height: 1px !important;
+}
+
+/* line 54, /home/kavya/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rails-assets-jcrop-2.0.4/app/assets/stylesheets/jcrop/Jcrop.scss */
+.jcrop-border.ord-w,
+.jcrop-border.ord-e {
+  height: 100%;
+  width: 1px !important;
+}
+
+/* line 59, /home/kavya/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rails-assets-jcrop-2.0.4/app/assets/stylesheets/jcrop/Jcrop.scss */
+.jcrop-border.ord-e {
+  right: -1px;
+}
+
+/* line 62, /home/kavya/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rails-assets-jcrop-2.0.4/app/assets/stylesheets/jcrop/Jcrop.scss */
+.jcrop-border.ord-n {
+  top: -1px;
+}
+
+/* line 65, /home/kavya/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rails-assets-jcrop-2.0.4/app/assets/stylesheets/jcrop/Jcrop.scss */
+.jcrop-border.ord-w {
+  left: -1px;
+}
+
+/* line 68, /home/kavya/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rails-assets-jcrop-2.0.4/app/assets/stylesheets/jcrop/Jcrop.scss */
+.jcrop-border.ord-s {
+  bottom: -1px;
+}
+
+/* line 71, /home/kavya/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rails-assets-jcrop-2.0.4/app/assets/stylesheets/jcrop/Jcrop.scss */
+.jcrop-selection {
+  position: absolute;
+}
+
+/* line 74, /home/kavya/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rails-assets-jcrop-2.0.4/app/assets/stylesheets/jcrop/Jcrop.scss */
+.jcrop-box {
+  z-index: 2;
+  display: block;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0;
+}
+
+/* line 83, /home/kavya/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rails-assets-jcrop-2.0.4/app/assets/stylesheets/jcrop/Jcrop.scss */
+.jcrop-box:hover {
+  background: none;
+}
+
+/* line 86, /home/kavya/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rails-assets-jcrop-2.0.4/app/assets/stylesheets/jcrop/Jcrop.scss */
+.jcrop-box:active {
+  background: none;
+}
+
+/* line 89, /home/kavya/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rails-assets-jcrop-2.0.4/app/assets/stylesheets/jcrop/Jcrop.scss */
+.jcrop-box:focus {
+  outline: 1px rgba(128, 128, 128, 0.65) dotted;
+}
+
+/* line 92, /home/kavya/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rails-assets-jcrop-2.0.4/app/assets/stylesheets/jcrop/Jcrop.scss */
+.jcrop-active,
+.jcrop-box {
+  position: relative;
+}
+
+/* line 96, /home/kavya/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rails-assets-jcrop-2.0.4/app/assets/stylesheets/jcrop/Jcrop.scss */
+.jcrop-box {
+  width: 100%;
+  height: 100%;
+  cursor: move;
+}
+
+/* Selection Handles */
+/* line 102, /home/kavya/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rails-assets-jcrop-2.0.4/app/assets/stylesheets/jcrop/Jcrop.scss */
+.jcrop-handle {
+  z-index: 4;
+  background-color: rgba(49, 28, 28, 0.58);
+  border: 1px #eeeeee solid;
+  width: 9px;
+  height: 9px;
+  font-size: 0;
+  position: absolute;
+  filter: alpha(opacity=80) !important;
+  opacity: 0.8 !important;
+}
+
+/* line 113, /home/kavya/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rails-assets-jcrop-2.0.4/app/assets/stylesheets/jcrop/Jcrop.scss */
+.jcrop-handle.ord-n {
+  left: 50%;
+  margin-left: -5px;
+  margin-top: -5px;
+  top: 0;
+  cursor: n-resize;
+}
+
+/* line 120, /home/kavya/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rails-assets-jcrop-2.0.4/app/assets/stylesheets/jcrop/Jcrop.scss */
+.jcrop-handle.ord-s {
+  bottom: 0;
+  left: 50%;
+  margin-bottom: -5px;
+  margin-left: -5px;
+  cursor: s-resize;
+}
+
+/* line 127, /home/kavya/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rails-assets-jcrop-2.0.4/app/assets/stylesheets/jcrop/Jcrop.scss */
+.jcrop-handle.ord-e {
+  margin-right: -5px;
+  margin-top: -5px;
+  right: 0;
+  top: 50%;
+  cursor: e-resize;
+}
+
+/* line 134, /home/kavya/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rails-assets-jcrop-2.0.4/app/assets/stylesheets/jcrop/Jcrop.scss */
+.jcrop-handle.ord-w {
+  left: 0;
+  margin-left: -5px;
+  margin-top: -5px;
+  top: 50%;
+  cursor: w-resize;
+}
+
+/* line 141, /home/kavya/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rails-assets-jcrop-2.0.4/app/assets/stylesheets/jcrop/Jcrop.scss */
+.jcrop-handle.ord-nw {
+  left: 0;
+  margin-left: -5px;
+  margin-top: -5px;
+  top: 0;
+  cursor: nw-resize;
+}
+
+/* line 148, /home/kavya/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rails-assets-jcrop-2.0.4/app/assets/stylesheets/jcrop/Jcrop.scss */
+.jcrop-handle.ord-ne {
+  margin-right: -5px;
+  margin-top: -5px;
+  right: 0;
+  top: 0;
+  cursor: ne-resize;
+}
+
+/* line 155, /home/kavya/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rails-assets-jcrop-2.0.4/app/assets/stylesheets/jcrop/Jcrop.scss */
+.jcrop-handle.ord-se {
+  bottom: 0;
+  margin-bottom: -5px;
+  margin-right: -5px;
+  right: 0;
+  cursor: se-resize;
+}
+
+/* line 162, /home/kavya/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rails-assets-jcrop-2.0.4/app/assets/stylesheets/jcrop/Jcrop.scss */
+.jcrop-handle.ord-sw {
+  bottom: 0;
+  left: 0;
+  margin-bottom: -5px;
+  margin-left: -5px;
+  cursor: sw-resize;
+}
+
+/* Larger Selection Handles for Touch */
+/* line 170, /home/kavya/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rails-assets-jcrop-2.0.4/app/assets/stylesheets/jcrop/Jcrop.scss */
+.jcrop-touch .jcrop-handle {
+  z-index: 4;
+  background-color: rgba(49, 28, 28, 0.58);
+  border: 1px #eeeeee solid;
+  width: 18px;
+  height: 18px;
+  font-size: 0;
+  position: absolute;
+  filter: alpha(opacity=80) !important;
+  opacity: 0.8 !important;
+}
+
+/* line 181, /home/kavya/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rails-assets-jcrop-2.0.4/app/assets/stylesheets/jcrop/Jcrop.scss */
+.jcrop-touch .jcrop-handle.ord-n {
+  left: 50%;
+  margin-left: -10px;
+  margin-top: -10px;
+  top: 0;
+  cursor: n-resize;
+}
+
+/* line 188, /home/kavya/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rails-assets-jcrop-2.0.4/app/assets/stylesheets/jcrop/Jcrop.scss */
+.jcrop-touch .jcrop-handle.ord-s {
+  bottom: 0;
+  left: 50%;
+  margin-bottom: -10px;
+  margin-left: -10px;
+  cursor: s-resize;
+}
+
+/* line 195, /home/kavya/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rails-assets-jcrop-2.0.4/app/assets/stylesheets/jcrop/Jcrop.scss */
+.jcrop-touch .jcrop-handle.ord-e {
+  margin-right: -10px;
+  margin-top: -10px;
+  right: 0;
+  top: 50%;
+  cursor: e-resize;
+}
+
+/* line 202, /home/kavya/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rails-assets-jcrop-2.0.4/app/assets/stylesheets/jcrop/Jcrop.scss */
+.jcrop-touch .jcrop-handle.ord-w {
+  left: 0;
+  margin-left: -10px;
+  margin-top: -10px;
+  top: 50%;
+  cursor: w-resize;
+}
+
+/* line 209, /home/kavya/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rails-assets-jcrop-2.0.4/app/assets/stylesheets/jcrop/Jcrop.scss */
+.jcrop-touch .jcrop-handle.ord-nw {
+  left: 0;
+  margin-left: -10px;
+  margin-top: -10px;
+  top: 0;
+  cursor: nw-resize;
+}
+
+/* line 216, /home/kavya/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rails-assets-jcrop-2.0.4/app/assets/stylesheets/jcrop/Jcrop.scss */
+.jcrop-touch .jcrop-handle.ord-ne {
+  margin-right: -10px;
+  margin-top: -10px;
+  right: 0;
+  top: 0;
+  cursor: ne-resize;
+}
+
+/* line 223, /home/kavya/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rails-assets-jcrop-2.0.4/app/assets/stylesheets/jcrop/Jcrop.scss */
+.jcrop-touch .jcrop-handle.ord-se {
+  bottom: 0;
+  margin-bottom: -10px;
+  margin-right: -10px;
+  right: 0;
+  cursor: se-resize;
+}
+
+/* line 230, /home/kavya/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rails-assets-jcrop-2.0.4/app/assets/stylesheets/jcrop/Jcrop.scss */
+.jcrop-touch .jcrop-handle.ord-sw {
+  bottom: 0;
+  left: 0;
+  margin-bottom: -10px;
+  margin-left: -10px;
+  cursor: sw-resize;
+}
+
+/* Selection Dragbars */
+/* line 238, /home/kavya/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rails-assets-jcrop-2.0.4/app/assets/stylesheets/jcrop/Jcrop.scss */
+.jcrop-dragbar {
+  font-size: 0;
+  position: absolute;
+}
+
+/* line 242, /home/kavya/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rails-assets-jcrop-2.0.4/app/assets/stylesheets/jcrop/Jcrop.scss */
+.jcrop-dragbar.ord-n,
+.jcrop-dragbar.ord-s {
+  height: 9px !important;
+  width: 100%;
+}
+
+/* line 247, /home/kavya/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rails-assets-jcrop-2.0.4/app/assets/stylesheets/jcrop/Jcrop.scss */
+.jcrop-dragbar.ord-e,
+.jcrop-dragbar.ord-w {
+  top: 0px;
+  height: 100%;
+  width: 9px !important;
+}
+
+/* line 253, /home/kavya/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rails-assets-jcrop-2.0.4/app/assets/stylesheets/jcrop/Jcrop.scss */
+.jcrop-dragbar.ord-n {
+  margin-top: -5px;
+  cursor: n-resize;
+  top: 0px;
+}
+
+/* line 258, /home/kavya/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rails-assets-jcrop-2.0.4/app/assets/stylesheets/jcrop/Jcrop.scss */
+.jcrop-dragbar.ord-s {
+  bottom: 0;
+  margin-bottom: -5px;
+  cursor: s-resize;
+}
+
+/* line 263, /home/kavya/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rails-assets-jcrop-2.0.4/app/assets/stylesheets/jcrop/Jcrop.scss */
+.jcrop-dragbar.ord-e {
+  margin-right: -5px;
+  right: 0;
+  cursor: e-resize;
+}
+
+/* line 268, /home/kavya/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rails-assets-jcrop-2.0.4/app/assets/stylesheets/jcrop/Jcrop.scss */
+.jcrop-dragbar.ord-w {
+  margin-left: -5px;
+  cursor: w-resize;
+}
+
+/* Shading panels */
+/* line 273, /home/kavya/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rails-assets-jcrop-2.0.4/app/assets/stylesheets/jcrop/Jcrop.scss */
+.jcrop-shades {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+/* line 278, /home/kavya/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rails-assets-jcrop-2.0.4/app/assets/stylesheets/jcrop/Jcrop.scss */
+.jcrop-shades div {
+  cursor: crosshair;
+}
+
+/* Various special states */
+/* line 282, /home/kavya/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rails-assets-jcrop-2.0.4/app/assets/stylesheets/jcrop/Jcrop.scss */
+.jcrop-noresize .jcrop-dragbar,
+.jcrop-noresize .jcrop-handle {
+  display: none;
+}
+
+/* line 286, /home/kavya/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rails-assets-jcrop-2.0.4/app/assets/stylesheets/jcrop/Jcrop.scss */
+.jcrop-selection.jcrop-nodrag .jcrop-box,
+.jcrop-nodrag .jcrop-shades div {
+  cursor: default;
+}
+
+/* The "jcrop-light" class/extension */
+/* line 291, /home/kavya/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rails-assets-jcrop-2.0.4/app/assets/stylesheets/jcrop/Jcrop.scss */
+.jcrop-light .jcrop-border {
+  background: #ffffff;
+  filter: alpha(opacity=70) !important;
+  opacity: 0.7 !important;
+}
+
+/* line 296, /home/kavya/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rails-assets-jcrop-2.0.4/app/assets/stylesheets/jcrop/Jcrop.scss */
+.jcrop-light .jcrop-handle {
+  background-color: #000000;
+  border-color: #ffffff;
+}
+
+/* The "jcrop-dark" class/extension */
+/* line 301, /home/kavya/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rails-assets-jcrop-2.0.4/app/assets/stylesheets/jcrop/Jcrop.scss */
+.jcrop-dark .jcrop-border {
+  background: #000000;
+  filter: alpha(opacity=70) !important;
+  opacity: 0.7 !important;
+}
+
+/* line 306, /home/kavya/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rails-assets-jcrop-2.0.4/app/assets/stylesheets/jcrop/Jcrop.scss */
+.jcrop-dark .jcrop-handle {
+  background-color: #ffffff;
+  border-color: #000000;
+}
+
+/* Simple macro to turn off the antlines */
+/* line 311, /home/kavya/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rails-assets-jcrop-2.0.4/app/assets/stylesheets/jcrop/Jcrop.scss */
+.solid-line .jcrop-border {
+  background: #ffffff;
+}
+
+/* line 314, /home/kavya/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rails-assets-jcrop-2.0.4/app/assets/stylesheets/jcrop/Jcrop.scss */
+.jcrop-thumb {
+  position: absolute;
+  overflow: hidden;
+  z-index: 5;
+}
+
+/* Fix for twitter bootstrap et al. */
+/* line 320, /home/kavya/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rails-assets-jcrop-2.0.4/app/assets/stylesheets/jcrop/Jcrop.scss */
+.jcrop-active img,
+.jcrop-thumb img,
+.jcrop-thumb canvas {
+  min-width: none;
+  min-height: none;
+  max-width: none;
+  max-height: none;
+}
+
+/* Improved multiple selection styles - in progress */
+/* line 329, /home/kavya/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rails-assets-jcrop-2.0.4/app/assets/stylesheets/jcrop/Jcrop.scss */
+.jcrop-hl-active .jcrop-border {
+  filter: alpha(opacity=20) !important;
+  opacity: 0.2 !important;
+}
+
+/* line 333, /home/kavya/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rails-assets-jcrop-2.0.4/app/assets/stylesheets/jcrop/Jcrop.scss */
+.jcrop-hl-active .jcrop-handle {
+  filter: alpha(opacity=10) !important;
+  opacity: 0.1 !important;
+}
+
+/* line 337, /home/kavya/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rails-assets-jcrop-2.0.4/app/assets/stylesheets/jcrop/Jcrop.scss */
+.jcrop-hl-active .jcrop-selection:hover {
+  /*
+    .jcrop-handle {
+      filter:Alpha(opacity=35)!important;
+      opacity:.35!important;
+    }
+    */
+}
+
+/* line 346, /home/kavya/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rails-assets-jcrop-2.0.4/app/assets/stylesheets/jcrop/Jcrop.scss */
+.jcrop-hl-active .jcrop-selection:hover .jcrop-border {
+  background-color: #ccc;
+  filter: alpha(opacity=50) !important;
+  opacity: 0.5 !important;
+}
+
+/* line 351, /home/kavya/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rails-assets-jcrop-2.0.4/app/assets/stylesheets/jcrop/Jcrop.scss */
+.jcrop-hl-active .jcrop-selection.jcrop-current .jcrop-border {
+  background: #808080 url(/assets/jcrop/css/Jcrop-752309673bbd9d9b2ba0bd58d0a7071a2c59c30e2824d85bcd2a3bc0a07ef1f1.gif);
+  opacity: 0.35 !important;
+  filter: alpha(opacity=35) !important;
+}
+
+/* line 356, /home/kavya/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rails-assets-jcrop-2.0.4/app/assets/stylesheets/jcrop/Jcrop.scss */
+.jcrop-hl-active .jcrop-selection.jcrop-current .jcrop-handle {
+  filter: alpha(opacity=30) !important;
+  opacity: 0.3 !important;
+}
+
+/* line 360, /home/kavya/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rails-assets-jcrop-2.0.4/app/assets/stylesheets/jcrop/Jcrop.scss */
+.jcrop-hl-active .jcrop-selection.jcrop-focus .jcrop-border {
+  background: url(/assets/jcrop/css/Jcrop-752309673bbd9d9b2ba0bd58d0a7071a2c59c30e2824d85bcd2a3bc0a07ef1f1.gif);
+  opacity: 0.65 !important;
+  filter: alpha(opacity=65) !important;
+}
+
+/* line 365, /home/kavya/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rails-assets-jcrop-2.0.4/app/assets/stylesheets/jcrop/Jcrop.scss */
+.jcrop-hl-active .jcrop-selection.jcrop-focus .jcrop-handle {
+  filter: alpha(opacity=60) !important;
+  opacity: 0.6 !important;
+}
+
+/* Prevent background on button element */
+/* line 370, /home/kavya/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rails-assets-jcrop-2.0.4/app/assets/stylesheets/jcrop/Jcrop.scss */
+button.jcrop-box {
+  background: none;
+}
+/* line 1, /home/kavya/Desktop/WAE /posts/app/assets/stylesheets/scaffolds.scss */
+body {
+  background-color: #fff;
+  color: #333;
+  margin: 33px;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 10, /home/kavya/Desktop/WAE /posts/app/assets/stylesheets/scaffolds.scss */
+p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 16, /home/kavya/Desktop/WAE /posts/app/assets/stylesheets/scaffolds.scss */
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+/* line 22, /home/kavya/Desktop/WAE /posts/app/assets/stylesheets/scaffolds.scss */
+a {
+  color: #000;
+}
+/* line 25, /home/kavya/Desktop/WAE /posts/app/assets/stylesheets/scaffolds.scss */
+a:visited {
+  color: #666;
+}
+/* line 29, /home/kavya/Desktop/WAE /posts/app/assets/stylesheets/scaffolds.scss */
+a:hover {
+  color: #fff;
+  background-color: #000;
+}
+
+/* line 35, /home/kavya/Desktop/WAE /posts/app/assets/stylesheets/scaffolds.scss */
+th {
+  padding-bottom: 5px;
+}
+
+/* line 39, /home/kavya/Desktop/WAE /posts/app/assets/stylesheets/scaffolds.scss */
+td {
+  padding: 0 5px 7px;
+}
+
+/* line 44, /home/kavya/Desktop/WAE /posts/app/assets/stylesheets/scaffolds.scss */
+div.field, div.actions {
+  margin-bottom: 10px;
+}
+
+/* line 49, /home/kavya/Desktop/WAE /posts/app/assets/stylesheets/scaffolds.scss */
+#notice {
+  color: green;
+}
+
+/* line 53, /home/kavya/Desktop/WAE /posts/app/assets/stylesheets/scaffolds.scss */
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+/* line 59, /home/kavya/Desktop/WAE /posts/app/assets/stylesheets/scaffolds.scss */
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px 7px 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+/* line 66, /home/kavya/Desktop/WAE /posts/app/assets/stylesheets/scaffolds.scss */
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px -7px 0;
+  background-color: #c00;
+  color: #fff;
+}
+/* line 76, /home/kavya/Desktop/WAE /posts/app/assets/stylesheets/scaffolds.scss */
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+/* line 82, /home/kavya/Desktop/WAE /posts/app/assets/stylesheets/scaffolds.scss */
+label {
+  display: block;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+
+
+
+
+
+
+
+ */
+
+.like:hover {
+    text-decoration: none;
+}

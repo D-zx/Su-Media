@@ -1,0 +1,62 @@
+
+
+<div class="container" id="container">
+  <div id="user_status">
+    <% if user_signed_in? %>
+        <h1><%= current_user.name %>'s Detail</h1>
+
+
+        <div><br><hr>
+          <div class="row"><div class="col-sm-2">
+            <label><bold>Name</bold></label>  </div>
+            <div class="col-sm-2"><%= current_user.name%></div></div><br>
+
+          <div class="row"><div class="col-sm-2"> <label><bold>Email</bold></label> </div>
+            <div class="col-sm-2"><%= current_user.email%></div></div><br>
+
+          <div class="row"><div class="col-sm-2"><label><bold>StudentID</bold></label> </div>
+            <div class="col-sm-2"> <%= current_user.studentid%></div></div><br>
+
+          <div class="row"><div class="col-sm-2"><label><bold>Field of Study</bold></label> </div>
+            <div class="col-sm-2"><%= current_user.fos%></div></div><br>
+
+
+          <div class="row"><div class="col-sm-2"><label><bold>Gender</bold></label>  </div>
+            <div class="col-sm-2"><%= current_user.gender%></div></div><br>
+
+          <div class="row"><div class="col-sm-2"><label><bold>Contact</bold></label> </div>
+            <div class="col-sm-2"><%= current_user.ph%></div></div><br>
+        </div>
+
+    <% else %>
+
+    <% end %>
+    <a href="/users/edit"><button type="button">Edit Profile</button></a>
+
+
+    <br><hr>
+  </div>
+
+  <h2><%= @user.name%>'s Task</h2>
+
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Death Line</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @tasks.each do |task| %>
+
+        <tr>
+          <td><%= task.title%></td>
+          <td><%= task.description%></td>
+          <td><%= task.deadline%></td>
+        </tr>
+
+    <%end%>
+    </tbody>
+  </table>
+</div>

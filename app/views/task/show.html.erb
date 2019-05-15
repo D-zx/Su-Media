@@ -1,0 +1,61 @@
+<div class="container">
+  <h2><%= @user.name%> Detail</h2>
+  <div><br><hr>
+    <div class="row"><div class="col-sm-2">
+      <label><bold>Name</bold></label>  </div>
+      <div class="col-sm-2"><%= current_user.name%></div></div><br>
+
+    <div class="row"><div class="col-sm-2"> <label><bold>Email</bold></label> </div>
+      <div class="col-sm-2"><%= current_user.email%></div></div><br>
+
+    <div class="row"><div class="col-sm-2"><label><bold>StudentID</bold></label> </div>
+      <div class="col-sm-2"> <%= current_user.studentid%></div></div><br>
+
+    <div class="row"><div class="col-sm-2"><label><bold>Field of Study</bold></label> </div>
+      <div class="col-sm-2"><%= current_user.fos%></div></div><br>
+
+
+    <div class="row"><div class="col-sm-2"><label><bold>Gender</bold></label>  </div>
+      <div class="col-sm-2"><%= current_user.gender%></div></div><br>
+
+    <div class="row"><div class="col-sm-2"><label><bold>Contact</bold></label> </div>
+      <div class="col-sm-2"><%= current_user.ph%></div></div><br>
+  </div>
+
+  <h2><%= @user.name%>'s Task</h2>
+
+
+
+
+    <% if @tasks.ids == []%>
+    <h3><%= @user.name%> do not have tasks right now .. Yaay!!</h3>
+  <% else %>
+      <table class="table">
+        <thead>
+        <tr>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Death Line</th>
+        </tr>
+        </thead>
+
+        <% @tasks.each do |task| %>
+            <tbody>
+
+
+            <tr>
+              <td><%= task.title%></td>
+              <td><%= task.description%></td>
+              <td><%= task.deadline%></td>
+            </tr>
+
+        </tbody>
+        <%end%>
+      </table>
+  <% end %>
+
+<%#= link_to "Add task", new_home_assign_task_path(@user)%>
+  <%if session[:user]== 1%>
+      <%= link_to "Add task", {:controller => "assign_tasks", :action => "new", :user_id => @user.id} %>
+  <%end%>
+</div>

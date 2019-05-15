@@ -1,0 +1,16 @@
+
+<%= simple_form_for(@budget) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :allocateddate %>
+    <%= f.input :total %>
+    <%= f.input :spent %>
+    <%= f.input :balance %>
+    <%= f.input :note %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

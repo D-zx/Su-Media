@@ -1,0 +1,31 @@
+<h1>User List</h1>
+
+<%= form_tag task_index_path do %>
+    <table class="table">
+      <thead>
+      <tr>
+        <th>Name</th>
+        <th>E-mail</th>
+        <th>Detail</th>
+      </tr>
+      </thead>
+      <tbody>
+
+      <% @users.each do |user| %>
+          <tr>
+            <td><%=user['name']%></td>
+            <td><%=user['email']%></td>
+            <td><button type="submit" name="show"  value="<%=user['id']%>">Show</button>
+          </tr>
+
+      <%end%>
+      </tbody>
+    </table>
+
+
+<%end%>
+
+
+
+
+
