@@ -56,6 +56,6 @@
 
 <%#= link_to "Add task", new_home_assign_task_path(@user)%>
   <%if session[:user]== 1%>
-      <%= link_to "Add task", {:controller => "assign_tasks", :action => "new", :user_id => @user.id} %>
+  <button><%= link_to "Add task", {:controller => "assign_tasks", :action => "new", :user_id => @user.id} %></button>
   <%end%>
 </div>
